@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+<div class="container " style="background-color: rgb(0, 89, 83);height:max-content;padding:100px;padding-top: 50px;">
+    
+
+
+    <div class="container-fluid card" align="center" style="width: max-content;padding:30px" >
+
+    <h1>Register</h1>
+    <form action="" method="POST"  style="padding: 30px;">
+        {% csrf_token %}
+        {{ form.username.label_tag }}
+        {{ form.username}} <br>
+        <!-- {{ form.email.label_tag }}
+        {{ form.email }}<br> -->
+        {{ form.password1.label_tag }}
+        {{ form.password1}}<br>
+        {{ form.password2.label_tag }}
+        {{ form.password2 }} <br>
+      <br>
+        <button> Register</button>
+    </form>
+    <a align="center" href="{% url 'login' %}">Login</a>
+    </div>
+</div>
+
+{% endblock content %}
+    
